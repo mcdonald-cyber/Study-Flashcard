@@ -15,7 +15,9 @@ const EditDeck = () => {
     name: '',
     description: '',
   });
-  // useEffect (readDeck)
+  console.log("EditDeck params:", params)
+  console.log("EditeDeck params.deckId:", params.deckId)
+  
   useEffect(() => {
     const getSpecificDeck = async () => {
       const response = await readDeck(params.deckId);

@@ -3,23 +3,22 @@ import {Link} from "react-router-dom"
 import { listCards } from "../../utils/api";
 
 
-function CardList({params}) {
+function Cards ({params}) {
 
-  console.log(params)
-  const [list, setList] = useState([]);
+  const [cardList, setCardList] = useState([]);
 
   useEffect(() => {
     function loadCards() {
-        listCards(params).then(setList);
+        listCards(params.deckId).then(setCardList);
       }
       loadCards();}, []
   );
-  console.log(list);
+  
 
   
-  return list.map((card) => (
+  return cardList.map((card) => (
 
-
+    <>
     <div class="card" style={{ margin: 10, padding: 10 }}>
         
       <div
@@ -47,8 +46,9 @@ function CardList({params}) {
             </div>
         </div>
     </div>
+    </>
   ));
  
 }
 
-export default CardList;
+export default Cards;

@@ -9,6 +9,7 @@ function DeckList() {
   }
   useEffect(loadDecks, []);
   const deckList = list.map((deck) => (
+    <>
     <div class="card" style={{ margin: 10, padding: 10 }}>
       <div
         class="card-title"
@@ -45,6 +46,7 @@ function DeckList() {
             </button>
         </div>
     </div>
+    </>
   ));
   return deckList;
 }

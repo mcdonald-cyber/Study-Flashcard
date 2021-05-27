@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useRouteMatch, Link} from "react-router-dom";
-import CardList from "../View/CardList";
+import Cards from "../View/CardList";
 import { readDeck } from "../../utils/api";
 
 
@@ -17,8 +17,8 @@ function View () {
     getSpecific();
   }, [params.deckId]);
 
-
-
+console.log("View params:", params)
+console.log("view deck:", deck)
    return (
     <div><nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -37,7 +37,7 @@ function View () {
                 }}
             >
             <div>
-                <Link to={`/`}>
+                <Link to={`/decks/:deckId/edit`}>
                     <button class="btn btn-secondary" style={{margin: 5
             }}>
                         <span class="oi oi-eye"></span>Edit
@@ -48,8 +48,9 @@ function View () {
                     <span class="oi oi-book"></span>Study
                 </button>
                 
-                <button class="btn btn-secondary" style={{margin: 5
+                <Link to="/decks/:deckId/cards/new"><button class="btn btn-secondary" style={{margin: 5
                 }}><span class="oi oi-plus" ></span> Create Cards</button>
+                </Link>
             </div>
             <button class="btn btn-danger">
             <span class="oi oi-trash"></span>
@@ -58,7 +59,7 @@ function View () {
         <div>
             <h5>Cards</h5>
             </div>
-        <CardList params={params} />
+        <Cards params={params} />
     </div>
 )
 }

@@ -21,10 +21,10 @@ console.log("View params:", params)
 console.log("view deck:", deck)
    return (
     <div><nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-    <Link to="/"><span class="oi oi-home"></span> Home</Link></li>  
-    <li class="breadcrumb-item active" aria-current="page">{deck.name}</li>
+        <ol className="breadcrumb">
+        <li className="breadcrumb-item">
+    <Link to="/"><span className="oi oi-home"></span> Home</Link></li>  
+    <li className="breadcrumb-item active" aria-current="page">{deck.name}</li>
     </ol>
   </nav> 
         <div><h5>{deck.name}</h5>{deck.description}</div>
@@ -38,28 +38,28 @@ console.log("view deck:", deck)
             >
             <div>
                 <Link to={`/decks/:deckId/edit`}>
-                    <button class="btn btn-secondary" style={{margin: 5
+                    <button className="btn btn-secondary" style={{margin: 5
             }}>
-                        <span class="oi oi-eye"></span>Edit
+                        <span className="oi oi-eye"></span>Edit
                     </button>
                 </Link>
-                <button class="btn btn-primary" style={{margin: 5
+                <button className="btn btn-primary" style={{margin: 5
                 }}>
-                    <span class="oi oi-book"></span>Study
+                    <span className="oi oi-book"></span>Study
                 </button>
                 
-                <Link to="/decks/:deckId/cards/new"><button class="btn btn-secondary" style={{margin: 5
-                }}><span class="oi oi-plus" ></span> Create Cards</button>
+                <Link to="/decks/:deckId/cards/new"><button className="btn btn-secondary" style={{margin: 5
+                }}><span className="oi oi-plus" ></span> Create Cards</button>
                 </Link>
             </div>
-            <button class="btn btn-danger">
-            <span class="oi oi-trash"></span>
+            <button className="btn btn-danger">
+            <span className="oi oi-trash"></span>
             </button>
         </div>
         <div>
             <h5>Cards</h5>
             </div>
-        <Cards params={params} />
+        <Cards />
     </div>
 )
 }
